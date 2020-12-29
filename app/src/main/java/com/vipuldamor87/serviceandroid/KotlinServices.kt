@@ -15,6 +15,7 @@ class KotlinServices : Service() {
         }
         thread.start()
                return START_STICKY
+        //return START_REDELIVER_INTENT to reinstatiate the service when application is removed from recents
     }
 
     override fun onTaskRemoved(rootIntent: Intent?) {
