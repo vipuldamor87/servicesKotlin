@@ -1,4 +1,4 @@
-package com.vipuldamor87.foregroundservice
+package com.vipuldamor87.foregroundservice.Services
 
 import android.app.*
 import android.content.Context
@@ -9,8 +9,9 @@ import android.location.LocationManager
 import android.os.Build
 import android.os.IBinder
 import android.util.Log
-import android.widget.Toast
 import androidx.core.app.NotificationCompat
+import com.vipuldamor87.foregroundservice.MainActivity
+import com.vipuldamor87.foregroundservice.R
 import java.util.*
 
 public class MyLocationForeService : Service() {

@@ -4,7 +4,8 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,11 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ForegroundService">
         <service
-            android:name=".MyForeService"
+            android:name=".Services.MyForeService"
             android:enabled="true"
             android:exported="true"></service>
         <service
-            android:name=".MyLocationForeService"/>
+            android:name=".Services.MyLocationForeService"/>
 
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,10 +1,12 @@
-package com.vipuldamor87.foregroundservice
+package com.vipuldamor87.foregroundservice.Services
 
 import android.app.*
 import android.content.Intent
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
+import com.vipuldamor87.foregroundservice.MainActivity
+import com.vipuldamor87.foregroundservice.R
 
 public class MyForeService : Service() {
     /*private lateinit var nManager : NotificationManager
