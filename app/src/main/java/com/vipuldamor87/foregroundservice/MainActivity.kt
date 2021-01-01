@@ -12,8 +12,10 @@ import androidx.lifecycle.Observer
 import androidx.work.*
 import com.vipuldamor87.foregroundservice.Services.MyForeService
 import com.vipuldamor87.foregroundservice.Services.MyLocationForeService
+import com.vipuldamor87.foregroundservice.Worker.PeriodicWorker
 import com.vipuldamor87.foregroundservice.Worker.UploadWorker
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -64,6 +66,9 @@ class MainActivity : AppCompatActivity() {
         uploadWorker.setOnClickListener {
             setOneTimeWorkRequest()
         }
+        periodicWorker.setOnClickListener{
+            setPeriodicWorkRequest()
+        }
 
     }
     private fun setOneTimeWorkRequest(){
@@ -89,5 +94,13 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext,message,Toast.LENGTH_LONG).show()
                 }
             })
+    }
+
+    private fun setPeriodicWorkRequest(){
+        val periodicWorkRequest = PeriodicWorkRequest
+            .Builder(PeriodicWorker::class.java,15,TimeUnit.MINUTES)
+            .build()
+        WorkManager.getInstance(applicationContext).enqueue(periodicWorkRequest)
+
     }
 }
