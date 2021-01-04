@@ -1,6 +1,7 @@
 package com.vipuldamor87.foregroundservice.Broadcast
 
 import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
@@ -20,7 +21,11 @@ class Broadcast : AppCompatActivity() {
 
         var int1 =integer1.text
         var int2 = integer2.text
-
+        try{
+            result= intent.getStringExtra("message").toString()
+        resultS.setText(result)
+        }
+        catch (e:Exception){}
 
         sendBroadcast.setOnClickListener {
 
@@ -30,7 +35,6 @@ class Broadcast : AppCompatActivity() {
             startActivity(i)
 
         }
-      //  startActivity(Intent(applicationContext,Broadcast_receive::class.java))
 
     }
 
