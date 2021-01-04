@@ -28,6 +28,7 @@ public class MyLocationForeService : Service() {
         {
             Log.d("error","not working")
         }
+
         Thread(Runnable {
             while(true)
             {

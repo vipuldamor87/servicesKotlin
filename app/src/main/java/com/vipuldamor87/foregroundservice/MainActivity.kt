@@ -13,6 +13,7 @@ import androidx.work.*
 import com.vipuldamor87.foregroundservice.Services.MyForeService
 import com.vipuldamor87.foregroundservice.Services.MyLocationForeService
 import com.vipuldamor87.foregroundservice.Worker.PeriodicWorker
+import com.vipuldamor87.foregroundservice.Worker.RecurWorker
 import com.vipuldamor87.foregroundservice.Worker.UploadWorker
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.concurrent.TimeUnit
@@ -69,6 +70,9 @@ class MainActivity : AppCompatActivity() {
         periodicWorker.setOnClickListener{
             setPeriodicWorkRequest()
         }
+        recurWorker.setOnClickListener{
+            setRecurWorkRequest()
+        }
 
     }
     private fun setOneTimeWorkRequest(){
@@ -96,11 +100,15 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
+    private fun setRecurWorkRequest(){
+        val recurWorker = OneTimeWorkRequest.Builder(RecurWorker::class.java).build()
+        WorkManager.getInstance(applicationContext).enqueue(recurWorker)
+    }
+
     private fun setPeriodicWorkRequest(){
         val periodicWorkRequest = PeriodicWorkRequest
             .Builder(PeriodicWorker::class.java,15,TimeUnit.MINUTES)
             .build()
         WorkManager.getInstance(applicationContext).enqueue(periodicWorkRequest)
-
     }
 }

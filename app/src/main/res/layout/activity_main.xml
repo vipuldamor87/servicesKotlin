@@ -46,6 +46,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="periodicWorker" />
+        <Button
+            android:id="@+id/recurWorker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RecurWorker" />
     </LinearLayout>>
 
 </ScrollView>
