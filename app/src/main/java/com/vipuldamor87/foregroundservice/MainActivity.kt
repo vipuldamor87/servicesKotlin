@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import androidx.work.*
+import com.vipuldamor87.foregroundservice.Broadcast.Broadcast
 import com.vipuldamor87.foregroundservice.Services.MyForeService
 import com.vipuldamor87.foregroundservice.Services.MyLocationForeService
 import com.vipuldamor87.foregroundservice.Worker.PeriodicWorker
@@ -72,6 +73,9 @@ class MainActivity : AppCompatActivity() {
         }
         recurWorker.setOnClickListener{
             setRecurWorkRequest()
+        }
+        broadCast.setOnClickListener {
+            startActivity(Intent(applicationContext,Broadcast::class.java))
         }
 
     }
