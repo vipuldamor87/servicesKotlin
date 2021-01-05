@@ -16,10 +16,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ForegroundService">
         <receiver
+            android:name=".Connectivity.ConnectivityListener"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity android:name=".Connectivity.Connectivity" />
+
+        <receiver
             android:name=".Broadcast.MyReceiver"
             android:enabled="true"
-            android:exported="true">
-        </receiver>
+            android:exported="true" />
 
         <activity android:name=".Broadcast.Broadcast_receive" />
         <activity android:name=".Broadcast.Broadcast" />
