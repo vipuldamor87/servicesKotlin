@@ -32,6 +32,11 @@ class Connectivity : AppCompatActivity(),ConnectivityListener.ConnectivityReceiv
         super.onResume()
         ConnectivityListener.connectivityReceiverListener = this
     }
+
+    override fun onPause() {
+        super.onPause()
+        unregisterReceiver(ConnectivityListener())
+    }
     private fun showNetworkMessage(isConnected: Boolean) {
 
         if (!isConnected) {

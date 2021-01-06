@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.work.*
 import com.vipuldamor87.foregroundservice.Broadcast.Broadcast
 import com.vipuldamor87.foregroundservice.Connectivity.Connectivity
+import com.vipuldamor87.foregroundservice.ContentProvider.ContentProvider
 import com.vipuldamor87.foregroundservice.Services.MyForeService
 import com.vipuldamor87.foregroundservice.Services.MyLocationForeService
 import com.vipuldamor87.foregroundservice.Worker.PeriodicWorker
@@ -80,6 +81,9 @@ class MainActivity : AppCompatActivity() {
         }
         connectivity.setOnClickListener {
             startActivity(Intent(applicationContext,Connectivity::class.java))
+        }
+        contentProvider.setOnClickListener {
+            startActivity(Intent(applicationContext,ContentProvider::class.java))
         }
 
     }
