@@ -5,13 +5,11 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.vipuldamor87.foregroundservice.Broadcast.Broadcast
-import com.vipuldamor87.foregroundservice.Broadcast.Broadcast_receive
 import com.vipuldamor87.foregroundservice.R
 import kotlinx.android.synthetic.main.contactchild.view.*
+
 
 class ContactAdapter(items: List<ContactDTO>, ctx: Context) : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
     private var list = items
@@ -33,10 +31,9 @@ class ContactAdapter(items: List<ContactDTO>, ctx: Context) : RecyclerView.Adapt
             var name = list[position].name
             var number = list[position].number
             val i = Intent(context, ContactDetails::class.java)
-            i.putExtra("name","$name")
-            i.putExtra("number","$number")
+            i.putExtra("name", "$name")
+            i.putExtra("number", "$number")
             context.startActivity(i)
-
         }
 
     }
@@ -48,6 +45,8 @@ class ContactAdapter(items: List<ContactDTO>, ctx: Context) : RecyclerView.Adapt
     override fun getItemCount(): Int {
         return list.size
     }
+
+
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val name = v.TvName!!
