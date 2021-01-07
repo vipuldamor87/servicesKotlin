@@ -69,7 +69,7 @@ class ContentProvider : AppCompatActivity() {
     }
 
 
-    private fun getRawContactIdByName(givenName: String): Long {
+     private fun getRawContactIdByName(givenName: String): Long {
         val contentResolver = contentResolver
 
         // Query raw_contacts table by display name field ( given_name family_name ) to get raw contact id.
@@ -227,20 +227,7 @@ class ContentProvider : AppCompatActivity() {
         )
 
         // Contact Home
-        contact.add(
-            ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI)
-                .withValueBackReference(ContactsContract.RawContacts.Data.RAW_CONTACT_ID, 0)
-                .withValue(
-                    ContactsContract.Data.MIMETYPE,
-                    ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE
-                )
-                .withValue(ContactsContract.CommonDataKinds.Phone.NUMBER, home)
-                .withValue(
-                    ContactsContract.CommonDataKinds.Phone.TYPE,
-                    ContactsContract.CommonDataKinds.Phone.TYPE_HOME
-                )
-                .build()
-        )
+
 
         // Email    `
         contact.add(
