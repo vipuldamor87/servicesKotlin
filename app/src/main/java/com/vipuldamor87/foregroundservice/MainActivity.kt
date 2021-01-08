@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import androidx.work.*
+import com.vipuldamor87.foregroundservice.ApiCalls.Retrofit
 import com.vipuldamor87.foregroundservice.Broadcast.Broadcast
 import com.vipuldamor87.foregroundservice.Connectivity.Connectivity
 import com.vipuldamor87.foregroundservice.ContentProvider.ContentProvider
@@ -84,6 +85,9 @@ class MainActivity : AppCompatActivity() {
         }
         contentProvider.setOnClickListener {
             startActivity(Intent(applicationContext,ContentProvider::class.java))
+        }
+        retrofit.setOnClickListener {
+            startActivity(Intent(applicationContext,Retrofit::class.java))
         }
 
     }

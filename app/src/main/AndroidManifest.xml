@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ForegroundService">
-        <activity android:name=".ContentProvider.ContactDetails"></activity>
+        <activity android:name=".ApiCalls.Retrofit"></activity>
+        <activity android:name=".ContentProvider.ContactDetails" />
         <activity android:name=".ContentProvider.ContentProvider" />
 
         <receiver
@@ -48,6 +49,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
