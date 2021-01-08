@@ -42,6 +42,7 @@ class Connectivity : AppCompatActivity(),ConnectivityListener.ConnectivityReceiv
         if (!isConnected) {
             displayNetwork.setText("No internet Connection")
             linearLayout.setBackgroundColor(Color.RED)
+
         }
         if(isConnected)
         {
@@ -50,4 +51,5 @@ class Connectivity : AppCompatActivity(),ConnectivityListener.ConnectivityReceiv
         }
     }
 
-}
+    }
+

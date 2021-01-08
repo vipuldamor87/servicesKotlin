@@ -1,7 +1,9 @@
 package com.vipuldamor87.foregroundservice
 
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
+import android.net.ConnectivityManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +15,7 @@ import androidx.work.*
 import com.vipuldamor87.foregroundservice.ApiCalls.Retrofit
 import com.vipuldamor87.foregroundservice.Broadcast.Broadcast
 import com.vipuldamor87.foregroundservice.Connectivity.Connectivity
+import com.vipuldamor87.foregroundservice.Connectivity.ConnectivityListener
 import com.vipuldamor87.foregroundservice.ContentProvider.ContentProvider
 import com.vipuldamor87.foregroundservice.Services.MyForeService
 import com.vipuldamor87.foregroundservice.Services.MyLocationForeService

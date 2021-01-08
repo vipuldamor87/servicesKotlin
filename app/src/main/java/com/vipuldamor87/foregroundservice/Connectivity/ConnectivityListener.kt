@@ -28,4 +28,5 @@ class ConnectivityListener : BroadcastReceiver() {
     companion object {
         var connectivityReceiverListener: ConnectivityReceiverListener? = null
     }
+
 }
